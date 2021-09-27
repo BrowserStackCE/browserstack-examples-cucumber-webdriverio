@@ -1,0 +1,39 @@
+{
+  "name": "browserstack-examples-cucumber-webdriverio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "bstack-local-parallel-browsers": "npx wdio resources/conf/wdio-bstack-local-parallel-browsers.conf.js",
+    "bstack-local-parallel": "npx wdio resources/conf/wdio-bstack-local-parallel.conf.js",
+    "bstack-local": "npx wdio resources/conf/wdio-bstack-local.conf.js",
+    "bstack-parallel-browsers": "npx wdio resources/conf/wdio-bstack-parallel-browsers.conf.js",
+    "bstack-parallel": "npx wdio resources/conf/wdio-bstack-parallel.conf.js",
+    "bstack-single": "npx wdio resources/conf/wdio-bstack-single.conf.js",
+    "docker-parallel": "npx wdio resources/conf/wdio-docker-service-parallel.conf.js",
+    "docker": "npx wdio resources/conf/wdio-docker-service.conf.js",
+    "on-prem-suite-parallel": "npx wdio resources/conf/wdio-on-prem-suite-parallel.conf.js",
+    "on-prem-suite": "npx wdio resources/conf/wdio-on-prem-suite.conf.js",
+    "on-prem": "npx wdio resources/conf/wdio-on-prem.conf.js",
+    "test": "npx wdio resources/conf/wdio-on-prem.conf.js",
+    "generate-report": "npx allure generate -c allure-results && npx allure open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^7.10.1",
+    "@wdio/browserstack-service": "^7.11.0",
+    "@wdio/cli": "^7.11.0",
+    "@wdio/cucumber-framework": "^7.11.0",
+    "@wdio/local-runner": "^7.11.0",
+    "@wdio/spec-reporter": "^7.10.1",
+    "allure-commandline": "^2.13.8",
+    "browserstack-local": "^1.4.8",
+    "chai": "^4.3.4",
+    "chromedriver": "^92.0.2",
+    "lodash": "^4.17.21",
+    "wdio-chromedriver-service": "^7.2.0",
+    "wdio-docker-service": "^3.1.3"
+  }
+}
