@@ -69,7 +69,8 @@ const overrides = {
     baseUrl: 'http://localhost:3000/',
     services: [
         ['browserstack', {
-            browserstackLocal: true
+            browserstackLocal: true,
+            preferScenarioName: true
         }]
     ],
     afterScenario: async (world, result) => {

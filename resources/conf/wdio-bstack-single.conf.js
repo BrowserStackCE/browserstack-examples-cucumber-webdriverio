@@ -20,7 +20,7 @@ const overrides = {
             'os': 'Windows',
             'osVersion': '10'
         },
-        browserName: 'Chrome',
+        browserName: 'Edge',
         browserVersion: 'latest',
         acceptInsecureCerts: true
     }],

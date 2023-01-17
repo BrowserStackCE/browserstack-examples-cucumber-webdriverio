@@ -32,5 +32,4 @@ const overrides = {
         }
     }
 }
-
 exports.config = _.defaultsDeep(overrides, defaults.config)

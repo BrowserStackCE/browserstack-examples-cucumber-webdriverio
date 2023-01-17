@@ -8,7 +8,7 @@ const overrides = {
     specs: [
         './resources/features/*.feature'
     ],
-    maxInstances: 5,
+    maxInstances: 10,
     capabilities: [{
         'bstack:options': {
             'projectName': 'BrowserStack',
