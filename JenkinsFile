@@ -1,13 +1,12 @@
 pipeline {
 	agent any
-	tools {
-		nodejs 'Node 16'
-	}
 	stages {
 	    stage ('Initiate tests on BrowserStack') {
 	        steps {
     			browserstack(credentialsId: "${credentials}") {
-                    sh "nvm run ${configuration}"
+					nodejs('Node 16') {
+                    	sh "nvm run ${configuration}"
+					}
                 }
 	        }
 		}
