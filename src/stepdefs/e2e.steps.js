@@ -6,8 +6,8 @@ const ConfirmationPage = require('../pages/confirmation.page')
 const OrdersPage = require('../pages/orders.page')
 
 Given('the user is on login page', async () => {
-    browser.url('')
-    HomePage.signInLink.click()
+    await browser.url('')
+    await HomePage.signInLink.click()
 })
 
 Given('the user logs in with username as {string} and password as {string}', async (username, password) => {
@@ -30,7 +30,6 @@ Given('provides shipping details and clicks Checkout', async (dataTable) => {
     await CheckoutPage.provinceInput.setValue(data[3])
     await CheckoutPage.postCodeInput.setValue(data[4])
     await CheckoutPage.checkoutShippingContinue.click()
-
     await ConfirmationPage.confirmationMessage.waitForDisplayed()
     await expect(ConfirmationPage.confirmationMessage).toHaveText('Your Order has been successfully placed.')
     await ConfirmationPage.continueShoppingButton.click()

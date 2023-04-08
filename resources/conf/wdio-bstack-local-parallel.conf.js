@@ -15,8 +15,6 @@ const overrides = {
             'buildName': process.env.BROWSERSTACK_BUILD_NAME || 'browserstack-examples-webdriverio - ' + timeStamp,
             'debug': true,
             'networkLogs': true,
-            'video': true,
-            'maskCommands': 'setValues, getValues, setCookies, getCookies',
             'os': 'Windows',
             'osVersion': '10'
         },
@@ -27,7 +25,13 @@ const overrides = {
     baseUrl: 'http://localhost:3000/',
     services: [
         ['browserstack', {
-            browserstackLocal: true
+			browserstackLocal: true,
+            testObservability: true,
+            testObservabilityOptions: {
+                'projectName': 'BrowserStack WebDriverIO Cucumber',
+				'buildName': 'browserstack-examples-webdriverio-cucumber',
+				'buildTag': 'webdriverio-cucumber'
+            },
         }]
     ],
     afterScenario: async (world, result) => {
