@@ -5,7 +5,7 @@ pipeline {
 	        steps {
     			browserstack(credentialsId: "${credentials}") {
 					nodejs('Node 16') {
-                    	sh "nvm run ${configuration}"
+                    	sh "npm run ${configuration}"
 					}
                 }
 	        }
