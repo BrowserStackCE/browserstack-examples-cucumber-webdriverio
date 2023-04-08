@@ -3,9 +3,10 @@ pipeline {
 	stages {
 	    stage ('Initiate tests on BrowserStack') {
 	        steps {
-    			browserstack(credentialsId: "${credentials}") {
-					nodejs('Node 16') {
-                    	sh "npm run ${configuration}"
+	            nodejs('18.10.0') {
+    			    browserstack(credentialsId: "${credentials}") {
+    			        sh 'npm install'
+					    sh "npm run ${configuration}"
 					}
                 }
 	        }
