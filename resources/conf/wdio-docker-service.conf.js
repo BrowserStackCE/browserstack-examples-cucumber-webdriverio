@@ -14,7 +14,20 @@ const overrides = {
         acceptInsecureCerts: true
     }],
     baseUrl: 'https://bstackdemo.com/',
-    services: ['docker'],
+    
+    services: ['docker',
+        ['browserstack', {
+            testObservability: true,
+            testObservabilityOptions: {
+                user: process.env.BROWSERSTACK_USERNAME,
+                key: process.env.BROWSERSTACK_ACCESS_KEY,
+                projectName: 'browserstack-examples-cucumber-webdriverio',
+                buildName: 'browserstack-examples-cucumber-webdriverio build',
+                buildTag: 'WDIO Cucumber'
+            },
+        }]
+    ],
+    
     dockerOptions: {
         image: 'selenium/standalone-chrome',
         healthCheck: 'http://localhost:4444',

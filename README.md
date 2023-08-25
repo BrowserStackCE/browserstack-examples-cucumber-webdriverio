@@ -353,6 +353,30 @@ In this section, we will run the features to test the internally hosted website 
 
 - Generate Report using the following command: `npm run generate-report`
 
+## Browserstack Test Observability
+
+Test Observability is a reporting tool that helps you isolate the genuine test failures after eliminating noise from flaky and always failing tests and also helps with root cause analysis of failed tests.
+
+With Test Observability, you can not only complete your run verification in minutes, you will also be empowered with rich historical data to understand the overall health of your test suites, uncover burning issues impacting the stability of your tests, and help you optimize your tests. 
+
+You can learn more about [what the product has to offer and why you should be using it](https://www.browserstack.com/docs/test-observability/overview/what-is-test-observability).
+
+Please add the following code snippet to your **wdio.conf.js**.
+```js
+services: [
+        ['browserstack', {
+            testObservability: true,
+            testObservabilityOptions: {
+                'projectName': 'Specify your project name here. It should not be dynamic',
+                'buildName': 'Specify your job name here. For e.g. `Nightly regression`. It should not be dynamic',
+                'buildTag': 'Any build tag goes here. For e.g. commit message'
+            },
+        }]
+    ],
+```
+
+To get started with the Test Observability integration with your WebdriverIO Project, please refer to this [documentation](https://www.browserstack.com/docs/test-observability/quick-start/webdriverio).
+
 ## Additional Resources
 
 - View your test results on the [BrowserStack Automate dashboard](https://www.browserstack.com/automate)

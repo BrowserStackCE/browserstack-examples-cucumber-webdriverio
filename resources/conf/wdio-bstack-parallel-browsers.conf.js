@@ -67,7 +67,16 @@ const overrides = {
         acceptInsecureCerts: true
     }],
     baseUrl: 'https://bstackdemo.com/',
-    services: ['browserstack'],
+    services: [
+        ['browserstack', {
+            testObservability: true,
+            testObservabilityOptions: {
+                'projectName': 'browserstack-examples-cucumber-webdriverio',
+                'buildName': 'browserstack-examples-cucumber-webdriverio build',
+                'buildTag': 'WDIO Cucumber'
+            },
+        }]
+    ],
     afterScenario: async (world, result) => {
         if (!result.passed) {
             await browser.takeScreenshot()

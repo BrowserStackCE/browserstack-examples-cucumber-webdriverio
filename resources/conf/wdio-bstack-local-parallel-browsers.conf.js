@@ -69,8 +69,14 @@ const overrides = {
     baseUrl: 'http://localhost:3000/',
     services: [
         ['browserstack', {
+            testObservability: true,
             browserstackLocal: true,
-            preferScenarioName: true
+            preferScenarioName: true,
+            testObservabilityOptions: {
+                'projectName': 'browserstack-examples-cucumber-webdriverio',
+                'buildName': 'browserstack-examples-cucumber-webdriverio build',
+                'buildTag': 'WDIO Cucumber'
+            },
         }]
     ],
     afterScenario: async (world, result) => {
