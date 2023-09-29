@@ -13,8 +13,8 @@ class SignInPage extends BasePage {
   get errorMessage() { return $('.api-error') }
 
   async login(username, password) {
-    await this.inputUsername.setValue([username, 'Enter'])
-    await this.inputPassword.setValue([password, 'Enter'])
+    await this.inputUsername.setValue(`${username}\n`)
+    await this.inputPassword.setValue(`${password}\n`)
     await this.btnSubmit.click()
   }
 
