@@ -3,8 +3,7 @@ const HomePage = require('../pages/home.page')
 const SignInPage = require('../pages/signIn.page')
 
 Given('the user enters username as {string} and password as {string}', async (username, password) => {
-    await SignInPage.inputUsername.setValue([username, 'Enter'])
-    await SignInPage.inputPassword.setValue([password, 'Enter'])
+    await SignInPage.login(username, password)
 })
 
 Given('clicks on login button', async () => {

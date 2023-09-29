@@ -1,12 +1,13 @@
 const defaults = require("./wdio.conf.js")
 const _ = require("lodash")
 const timeStamp = new Date().getTime()
+var path = require('path');
 
 const overrides = {
     user: process.env.BROWSERSTACK_USERNAME || 'BROWSERSTACK_USERNAME',
     key: process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACC_KEY',
     specs: [
-        '../features/*.feature'
+        `${path.resolve(__dirname)}/../../.generatedScenarios/*.feature`
     ],
     maxInstances: 5,
     capabilities: [{

@@ -1,6 +1,7 @@
 .idea/
 node_modules/
-allure-report/
 allure-results/
 local.log
 .DS_Store
+.generatedScenarios
+reports
