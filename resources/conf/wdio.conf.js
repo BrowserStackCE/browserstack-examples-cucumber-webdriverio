@@ -68,8 +68,6 @@ exports.config = {
         parallelExecutionReportDirectory: parallelExecutionReportDirectory,
       });
 
-      console.log(consolidatedJsonArray);
-
       let jsonFile = `${parallelExecutionReportDirectory}/report.json`;
       fs.writeFileSync(jsonFile, JSON.stringify(consolidatedJsonArray));
 
