@@ -29,6 +29,8 @@
     "browserstack-local": "^1.5.4",
     "chai": "^4.3.10",
     "lodash": "^4.17.21",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2",
     "wdio-chromedriver-service": "^8.1.1",
     "wdio-cucumber-parallel-execution": "^3.6.15",
     "wdio-cucumberjs-json-reporter": "^5.1.7"
