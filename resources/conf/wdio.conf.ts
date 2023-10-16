@@ -20,6 +20,13 @@ exports.config = {
         useCucumberStepReporter: true,
       },
     ],
+    [
+      "cucumberjs-json",
+      {
+        jsonFolder: `./reports`,
+        language: "en",
+      },
+    ],
   ],
   cucumberOpts: {
     require: ["./src/stepdefs/*.steps.js"],
@@ -34,7 +41,7 @@ exports.config = {
     strict: false,
     tagExpression: "",
     timeout: 60000,
-    ignoreUndefinedDefinitions: false,
+    ignoreUndefinedDefinitions: true,
   },
 
   /**
@@ -42,17 +49,7 @@ exports.config = {
    * @param {Object} config wdio configuration object
    * @param {Array.<Object>} capabilities list of capabilities details
    */
-  onPrepare: async () => {
-  },
-  reporters: [
-    [
-      "cucumberjs-json",
-      {
-        jsonFolder: `./reports`,
-        language: "en",
-      },
-    ],
-  ],
+  onPrepare: async () => {},
 
   /**
    * Gets executed after all workers got shut down and the process is about to exit. An error

@@ -1,4 +1,4 @@
-const defaults = require("./wdio.conf.js");
+const defaults = require("./wdio.conf.ts");
 const _ = require("lodash");
 const timeStamp = new Date().getTime();
 
@@ -40,7 +40,7 @@ const overrides = {
       },
     ],
   ],
-  afterScenario: async (world, result) => {
+  afterScenario: async (world: any, result: any, browser: any) => {
     if (!result.passed) {
       await browser.takeScreenshot();
     }
