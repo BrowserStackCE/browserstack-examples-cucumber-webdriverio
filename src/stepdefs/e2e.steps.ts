@@ -1,9 +1,9 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
-const HomePage = require("../pages/home.page");
-const SignInPage = require("../pages/signIn.page");
-const CheckoutPage = require("../pages/checkout.page");
-const ConfirmationPage = require("../pages/confirmation.page");
-const OrdersPage = require("../pages/orders.page");
+import HomePage from "../pages/home.page";
+import SignInPage from "../pages/signIn.page";
+import CheckoutPage from "../pages/checkout.page";
+import ConfirmationPage from "../pages/confirmation.page";
+import OrdersPage from "../pages/orders.page";
 
 Given("the user is on login page", async () => {
   browser.url("");
@@ -25,21 +25,24 @@ Given("adds two products to the cart", async () => {
   await HomePage.clickBuyButton();
 });
 
-Given("provides shipping details and clicks Checkout", async (dataTable) => {
-  const data = dataTable.rawTable[1];
-  await CheckoutPage.firstNameInput.setValue(data[0]);
-  await CheckoutPage.lastNameInput.setValue(data[1]);
-  await CheckoutPage.addressLine1Input.setValue(data[2]);
-  await CheckoutPage.provinceInput.setValue(data[3]);
-  await CheckoutPage.postCodeInput.setValue(data[4]);
-  await CheckoutPage.checkoutShippingContinue.click();
+Given(
+  "provides shipping details and clicks Checkout",
+  async (dataTable: any) => {
+    const data = dataTable.rawTable[1];
+    await CheckoutPage.firstNameInput.setValue(data[0]);
+    await CheckoutPage.lastNameInput.setValue(data[1]);
+    await CheckoutPage.addressLine1Input.setValue(data[2]);
+    await CheckoutPage.provinceInput.setValue(data[3]);
+    await CheckoutPage.postCodeInput.setValue(data[4]);
+    await CheckoutPage.checkoutShippingContinue.click();
 
-  await ConfirmationPage.confirmationMessage.waitForDisplayed();
-  await expect(ConfirmationPage.confirmationMessage).toHaveText(
-    "Your Order has been successfully placed."
-  );
-  await ConfirmationPage.continueShoppingButton.click();
-});
+    await ConfirmationPage.confirmationMessage.waitForDisplayed();
+    await expect(ConfirmationPage.confirmationMessage).toHaveText(
+      "Your Order has been successfully placed."
+    );
+    await ConfirmationPage.continueShoppingButton.click();
+  }
+);
 
 When("the user clicks on Orders link", async () => {
   await HomePage.ordersLink.click();

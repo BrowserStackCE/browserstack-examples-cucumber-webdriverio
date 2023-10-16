@@ -121,4 +121,4 @@ class HomePage extends BasePage {
   }
 }
 
-module.exports = new HomePage();
+export default new HomePage();

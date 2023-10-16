@@ -29,7 +29,7 @@ exports.config = {
     ],
   ],
   cucumberOpts: {
-    require: ["./src/stepdefs/*.steps.js"],
+    require: ["./src/stepdefs/*.steps.ts"],
     backtrace: false,
     requireModule: [],
     dryRun: false,
@@ -41,7 +41,7 @@ exports.config = {
     strict: false,
     tagExpression: "",
     timeout: 60000,
-    ignoreUndefinedDefinitions: true,
+    ignoreUndefinedDefinitions: false,
   },
 
   /**

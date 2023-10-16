@@ -19,4 +19,4 @@ class OrdersPage extends BasePage {
   }
 }
 
-export const ordersPage = new OrdersPage();
+export default new OrdersPage();

@@ -3,8 +3,8 @@ const _ = require("lodash");
 const timeStamp = new Date().getTime();
 
 const overrides = {
-  user: process.env.BROWSERSTACK_USERNAME || "BROWSERSTACK_USERNAME",
-  key: process.env.BROWSERSTACK_ACCESS_KEY || "BROWSERSTACK_ACC_KEY",
+  user: process.env.BROWSERSTACK_USERNAME,
+  key: process.env.BROWSERSTACK_ACCESS_KEY,
   specs: ["../features/e2e/e2e.feature"],
   maxInstances: 1,
   capabilities: [
